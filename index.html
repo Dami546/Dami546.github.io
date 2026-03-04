@@ -62,7 +62,6 @@
             height: 100%;
             object-fit: cover;
         }
-        /* Стили корпуса телефона для Hero */
         .phone-mockup {
             width: 290px;
             height: 590px;
@@ -89,12 +88,14 @@
             background-color: var(--brand-medium);
             transform: scale(1.05);
         }
+        /* Language Toggle Logic */
         [data-lang] { display: none; }
         body.lang-ru [data-lang="ru"] { display: block; }
         body.lang-ru span[data-lang="ru"] { display: inline; }
         body.lang-en [data-lang="en"] { display: block; }
         body.lang-en span[data-lang="en"] { display: inline; }
         
+        /* Reveal Animation */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -152,7 +153,7 @@
                 <span data-lang="en">Creating a new standard for environmental responsibility through transparency and social capital.</span>
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <a href="https://www.ecoscore.space/welcome.html" class="btn-primary px-10 py-4 rounded-full font-bold shadow-lg shadow-purple-200 text-center">
+                <a href="https://www.ecoscore.space/welcome.html" target="_blank" class="btn-primary px-10 py-4 rounded-full font-bold shadow-lg shadow-purple-200 text-center">
                     <span data-lang="ru">Присоединиться</span><span data-lang="en">Get Started</span>
                 </a>
                 <a href="#vision" class="px-10 py-4 rounded-full font-bold border border-[#58355e] text-[#58355e] text-center hover:bg-[#58355e]/5 transition-all">
@@ -163,7 +164,8 @@
         
         <div class="md:w-1/2 relative mt-16 md:mt-0 flex justify-center">
             <div class="phone-mockup mockup-shadow animate-float">
-                <img src="главный экран.png" alt="EcoScore Главный экран">
+                <!-- ПУТЬ: images/hero_screen.png -->
+                <img src="images/hero_screen.png" alt="EcoScore Hero Screen">
             </div>
         </div>
     </section>
@@ -202,7 +204,7 @@
         </div>
     </section>
 
-    <!-- Наша Миссия (Vision) -->
+    <!-- Наша Миссия -->
     <section id="vision" class="py-32 px-8 md:px-24 brand-section rounded-[60px] mx-4 md:mx-10 mb-24 overflow-hidden relative">
         <div class="absolute top-0 right-0 w-1/2 h-full bg-[#845e8c]/20 -skew-x-12 translate-x-1/2"></div>
         <div class="max-w-6xl mx-auto relative z-10">
@@ -240,7 +242,6 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <!-- Шаг 1 -->
             <div class="group reveal">
                 <div class="flex items-center gap-6 mb-6">
                     <span class="text-7xl font-black text-[#C7B1CB]/30 group-hover:text-[#845e8c] transition-colors">01</span>
@@ -250,7 +251,6 @@
                     <p class="text-gray-500 leading-relaxed"><span data-lang="ru">Вы находите ближайшие субботники, пункты приема вторсырья или эко-фестивали на нашей интерактивной карте.</span><span data-lang="en">Find nearby clean-ups, recycling points, or eco-festivals on our interactive map.</span></p>
                 </div>
             </div>
-            <!-- Шаг 2 -->
             <div class="group reveal" style="transition-delay: 0.1s;">
                 <div class="flex items-center gap-6 mb-6">
                     <span class="text-7xl font-black text-[#C7B1CB]/30 group-hover:text-[#845e8c] transition-colors">02</span>
@@ -260,7 +260,6 @@
                     <p class="text-gray-500 leading-relaxed"><span data-lang="ru">Через QR-коды на местах или фото-подтверждение вы фиксируете свой вклад в систему. Всё прозрачно и честно.</span><span data-lang="en">Fix your contribution via on-site QR codes or photo verification. Transparent and honest.</span></p>
                 </div>
             </div>
-            <!-- Шаг 3 -->
             <div class="group reveal" style="transition-delay: 0.2s;">
                 <div class="flex items-center gap-6 mb-6">
                     <span class="text-7xl font-black text-[#C7B1CB]/30 group-hover:text-[#845e8c] transition-colors">03</span>
@@ -270,7 +269,6 @@
                     <p class="text-gray-500 leading-relaxed"><span data-lang="ru">За каждое действие вы получаете баллы EcoScore и Эко-коины. Ваш уровень растет, открывая доступ к привилегиям.</span><span data-lang="en">Get EcoScore points and Eco-Coins for every action. Level up to unlock exclusive privileges.</span></p>
                 </div>
             </div>
-            <!-- Шаг 4 -->
             <div class="group reveal" style="transition-delay: 0.3s;">
                 <div class="flex items-center gap-6 mb-6">
                     <span class="text-7xl font-black text-[#C7B1CB]/30 group-hover:text-[#845e8c] transition-colors">04</span>
@@ -301,7 +299,8 @@
                 <!-- Карта -->
                 <div class="flex flex-col items-center reveal" style="transition-delay: 0.1s;">
                     <div class="mockup-container mb-8">
-                        <img src="карта активностей.png" class="mockup-img" alt="Карта активностей">
+                        <!-- ПУТЬ: images/map_screen.png -->
+                        <img src="images/map_screen.png" class="mockup-img" alt="Map Interface">
                     </div>
                     <div class="text-center">
                         <h4 class="text-xl font-bold text-[#58355e] mb-2 uppercase tracking-tighter"><span data-lang="ru">Карта активностей</span><span data-lang="en">Activity Map</span></h4>
@@ -311,7 +310,8 @@
                 <!-- Чат -->
                 <div class="flex flex-col items-center reveal" style="transition-delay: 0.2s;">
                     <div class="mockup-container mb-8">
-                        <img src="ии чат.png" class="mockup-img" alt="ИИ Чат">
+                        <!-- ПУТЬ: images/ai_chat.png -->
+                        <img src="images/ai_chat.png" class="mockup-img" alt="AI Chat Interface">
                     </div>
                     <div class="text-center">
                         <h4 class="text-xl font-bold text-[#58355e] mb-2 uppercase tracking-tighter"><span data-lang="ru">AI Ассистент</span><span data-lang="en">Eco Chat AI</span></h4>
@@ -321,7 +321,8 @@
                 <!-- Маркетплейс -->
                 <div class="flex flex-col items-center reveal" style="transition-delay: 0.3s;">
                     <div class="mockup-container mb-8">
-                        <img src="маркетплейс.png" class="mockup-img" alt="Маркетплейс">
+                        <!-- ПУТЬ: images/marketplace.png -->
+                        <img src="images/marketplace.png" class="mockup-img" alt="Marketplace Interface">
                     </div>
                     <div class="text-center">
                         <h4 class="text-xl font-bold text-[#58355e] mb-2 uppercase tracking-tighter"><span data-lang="ru">Маркетплейс</span><span data-lang="en">Eco Marketplace</span></h4>
@@ -343,7 +344,6 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
             <div class="space-y-8 reveal">
-                <!-- Алматы -->
                 <div class="glass-card p-10 bg-white group hover:bg-[#58355e] hover:text-white transition-all duration-500">
                     <div class="flex justify-between items-end mb-6">
                         <div>
@@ -357,7 +357,6 @@
                     </div>
                     <p class="text-right text-[10px] font-bold text-[#845e8c] group-hover:text-[#C7B1CB]">82% ACTIVITY RATE</p>
                 </div>
-                <!-- Астана -->
                 <div class="glass-card p-10 bg-white group hover:bg-[#58355e] hover:text-white transition-all duration-500">
                     <div class="flex justify-between items-end mb-6">
                         <div>
@@ -383,7 +382,6 @@
     <!-- Footer -->
     <footer id="contacts" class="bg-white py-24 px-8 md:px-24 border-t border-[#C7B1CB]/20">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
-            <!-- Brand -->
             <div class="reveal">
                 <h2 class="text-4xl font-extrabold mb-4 text-[#58355e]">EcoScore</h2>
                 <p class="text-gray-400 text-sm font-medium leading-relaxed max-w-xs">
@@ -392,7 +390,6 @@
                 </p>
             </div>
             
-            <!-- Contact Details -->
             <div class="reveal" style="transition-delay: 0.1s;">
                 <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 mb-8"><span data-lang="ru">Свяжитесь с нами</span><span data-lang="en">Get in Touch</span></p>
                 <div class="space-y-6">
@@ -400,7 +397,7 @@
                         <div class="w-10 h-10 rounded-full bg-[#f9f4f9] flex items-center justify-center text-lg">📷</div>
                         <div>
                             <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Instagram</p>
-                            <a href="https://instagram.com/ecoscore.kz" class="text-[#58355e] font-bold hover:text-[#845e8c] transition-colors">ecoscore.kz</a>
+                            <a href="https://instagram.com/ecoscore.kz" target="_blank" class="text-[#58355e] font-bold hover:text-[#845e8c] transition-colors">ecoscore.kz</a>
                         </div>
                     </div>
                     <div class="flex items-center gap-4">
@@ -413,7 +410,6 @@
                 </div>
             </div>
 
-            <!-- Location & Copyright -->
             <div class="flex flex-col md:items-end reveal" style="transition-delay: 0.2s;">
                 <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 mb-8"><span data-lang="ru">Локация</span><span data-lang="en">Location</span></p>
                 <div class="text-right mb-12">
