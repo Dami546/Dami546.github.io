@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoScore — Будущее социального капитала</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #58355e;
+            --brand-medium: #845e8c;
+            --brand-light: #C7B1CB;
+            --brand-bg: #f9f4f9;
+            --brand-accent: #d9f99d; 
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--brand-bg);
+            color: #1a1a1a;
+            scroll-behavior: smooth;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 24px;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 70% 30%, #C7B1CB 0%, #f9f4f9 60%);
+        }
+        .brand-section {
+            background-color: var(--brand-dark);
+            color: white;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .mockup-shadow {
+            box-shadow: 0 50px 100px -20px rgba(88, 53, 94, 0.3);
+        }
+        .btn-primary {
+            background-color: var(--brand-dark);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: var(--brand-medium);
+            transform: scale(1.05);
+        }
+        [data-lang] { display: none; }
+        body.lang-ru [data-lang="ru"] { display: block; }
+        body.lang-ru span[data-lang="ru"] { display: inline; }
+        body.lang-en [data-lang="en"] { display: block; }
+        body.lang-en span[data-lang="en"] { display: inline; }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased lang-ru">
+
+    <!-- Навигация -->
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center backdrop-blur-md bg-white/60 border-b border-[#C7B1CB]/20">
+        <div class="flex items-center gap-2">
+            <div class="w-3 h-3 bg-[#58355e] rounded-full"></div>
+            <span class="font-bold text-xl tracking-tighter uppercase text-[#58355e]">EcoScore</span>
+        </div>
+        
+        <div class="hidden md:flex gap-8 font-medium text-sm text-gray-600 uppercase tracking-widest">
+            <a href="#goal" class="hover:text-[#845e8c] transition-colors"><span data-lang="ru">Проблема</span><span data-lang="en">Problem</span></a>
+            <a href="#vision" class="hover:text-[#845e8c] transition-colors"><span data-lang="ru">Миссия</span><span data-lang="en">Mission</span></a>
+            <a href="#how" class="hover:text-[#845e8c] transition-colors"><span data-lang="ru">Механика</span><span data-lang="en">How it works</span></a>
+            <a href="#wrapped" class="hover:text-[#845e8c] transition-colors"><span data-lang="ru">Рейтинг</span><span data-lang="en">Rating</span></a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <button onclick="toggleLang()" class="text-xs font-bold border border-[#C7B1CB] px-3 py-1 rounded-md hover:bg-[#58355e] hover:text-white transition-all">
+                <span data-lang="ru">EN</span><span data-lang="en">RU</span>
+            </button>
+            <a href="https://www.ecoscore.space/welcome.html" class="bg-[#58355e] text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-[#845e8c] transition-all">
+                Launch App
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-8 md:px-24 pt-32 hero-gradient overflow-hidden">
+        <div class="md:w-1/2 z-10 text-center md:text-left">
+            <div class="inline-block px-4 py-1 rounded-full border border-[#845e8c]/30 text-[#845e8c] text-[10px] font-bold uppercase tracking-[0.2em] mb-6">
+                <span data-lang="ru">Казахстанский Эко-Стартап</span><span data-lang="en">Kazakhstan Eco-Startup</span>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight mb-4 text-[#58355e]">
+                Eco<br><span class="text-[#845e8c]">Score</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 font-light mb-8 max-w-lg leading-relaxed">
+                <span data-lang="ru">Мы создаем новый стандарт экологической ответственности через прозрачность и социальный капитал.</span>
+                <span data-lang="en">Creating a new standard for environmental responsibility through transparency and social capital.</span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="https://www.ecoscore.space/welcome.html" class="btn-primary px-10 py-4 rounded-full font-bold shadow-lg shadow-purple-200 text-center">
+                    <span data-lang="ru">Присоединиться</span><span data-lang="en">Get Started</span>
+                </a>
+                <a href="#vision" class="px-10 py-4 rounded-full font-bold border border-[#58355e] text-[#58355e] text-center hover:bg-[#58355e]/5 transition-all">
+                    <span data-lang="ru">Узнать больше</span><span data-lang="en">Learn More</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="md:w-1/2 relative mt-16 md:mt-0 flex justify-center">
+            <div class="w-[300px] h-[600px] bg-slate-900 rounded-[3rem] border-[8px] border-slate-800 mockup-shadow animate-float relative overflow-hidden">
+                <div class="absolute top-0 w-full h-full bg-[#845e8c] p-6 text-white pt-10">
+                    <div class="flex justify-between items-center mb-10">
+                        <div class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-xs">≡</div>
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" class="w-10 h-10 rounded-full border-2 border-white" alt="avatar">
+                    </div>
+                    <div class="bg-[#f9f4f9] rounded-3xl p-6 text-black mb-6">
+                        <p class="text-gray-500 text-sm"><span data-lang="ru">Ваш эко-уровень</span><span data-lang="en">Your Eco Level</span></p>
+                        <div class="flex justify-between items-center mt-2">
+                            <h2 class="text-4xl font-bold text-[#58355e]">12 <span class="text-lg font-medium text-gray-400">LVL</span></h2>
+                        </div>
+                    </div>
+                    <div class="bg-white/10 p-4 rounded-2xl mb-4">
+                        <div class="flex justify-between text-[10px] mb-2 font-bold uppercase tracking-widest opacity-80">
+                            <span>Progress</span>
+                            <span>84%</span>
+                        </div>
+                        <div class="w-full bg-white/20 h-1 rounded-full">
+                            <div class="bg-[#d9f99d] h-full w-[84%]"></div>
+                        </div>
+                    </div>
+                    <p class="font-bold mb-4 text-xs uppercase tracking-widest opacity-80"><span data-lang="ru">Последние достижения</span><span data-lang="en">Recent Achievements</span></p>
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="bg-white/20 p-4 rounded-2xl flex items-center gap-3">
+                            <div class="text-xl">🌟</div>
+                            <div class="text-[10px]">Top Contributor - Almaty</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Проблема -->
+    <section id="goal" class="py-32 px-8 md:px-24 bg-white">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-20">
+            <div class="md:w-1/2 reveal">
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-8 uppercase text-[#58355e] leading-tight">
+                    <span data-lang="ru">Экология — это не <span class="text-[#845e8c]">просто слова</span></span>
+                    <span data-lang="en">Ecology is more than <span class="text-[#845e8c]">just words</span></span>
+                </h2>
+                <p class="text-xl text-gray-500 mb-12 leading-relaxed">
+                    <span data-lang="ru">Проблема не в нежелании помогать, а в отсутствии прозрачной системы, где вклад каждого виден и имеет значение. Без мотивации и привычки даже самые благие намерения угасают.</span>
+                    <span data-lang="en">The problem isn't a lack of desire to help, but the absence of a transparent system where everyone's contribution is visible and matters. Without motivation, even the best intentions fade.</span>
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-6 bg-[#f9f4f9] rounded-3xl">
+                        <p class="text-3xl font-black text-[#58355e] mb-1">5М+</p>
+                        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-tight"><span data-lang="ru">Тонн отходов<br>в год</span><span data-lang="en">Tons of waste<br>per year</span></p>
+                    </div>
+                    <div class="p-6 bg-[#d9f99d]/30 rounded-3xl border border-[#d9f99d]">
+                        <p class="text-3xl font-black text-[#58355e] mb-1">15%</p>
+                        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest leading-tight"><span data-lang="ru">Текущий уровень<br>переработки</span><span data-lang="en">Current recycling<br>level</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 grid grid-cols-1 gap-6 reveal" style="transition-delay: 0.2s;">
+                <div class="glass-card p-8 border-l-8 border-[#58355e] shadow-xl">
+                    <p class="text-gray-600 italic">"Мы верим, что забота об экологии должна стать естественной частью жизни современного человека, такой же привычной, как проверка соцсетей."</p>
+                </div>
+                <div class="glass-card p-8 border-l-8 border-[#845e8c]">
+                    <p class="text-gray-600 italic">"Наша цель — создать социальный капитал, основанный на реальной пользе для общества и природы."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Наша Миссия (Vision) -->
+    <section id="vision" class="py-32 px-8 md:px-24 brand-section rounded-[60px] mx-4 md:mx-10 mb-24 overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-[#845e8c]/20 -skew-x-12 translate-x-1/2"></div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <h2 class="text-4xl md:text-7xl font-black mb-16 tracking-tighter uppercase text-center">
+                <span data-lang="ru">Наша миссия</span><span data-lang="en">Our Mission</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="text-center reveal">
+                    <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🎯</div>
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-widest"><span data-lang="ru">Осознанность</span><span data-lang="en">Awareness</span></h4>
+                    <p class="text-[#C7B1CB] font-light"><span data-lang="ru">Смена парадигмы потребления через образование и наглядные результаты.</span><span data-lang="en">Changing the consumption paradigm through education and visible results.</span></p>
+                </div>
+                <div class="text-center reveal" style="transition-delay: 0.2s;">
+                    <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🤝</div>
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-widest"><span data-lang="ru">Сообщество</span><span data-lang="en">Community</span></h4>
+                    <p class="text-[#C7B1CB] font-light"><span data-lang="ru">Объединение усилий граждан, бизнеса и государства на одной платформе.</span><span data-lang="en">Uniting the efforts of citizens, business, and state on one platform.</span></p>
+                </div>
+                <div class="text-center reveal" style="transition-delay: 0.4s;">
+                    <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🌍</div>
+                    <h4 class="text-xl font-bold mb-4 uppercase tracking-widest"><span data-lang="ru">Устойчивость</span><span data-lang="en">Sustainability</span></h4>
+                    <p class="text-[#C7B1CB] font-light"><span data-lang="ru">Создание самоподдерживающейся экосистемы ответственного поведения.</span><span data-lang="en">Creating a self-sustaining ecosystem of responsible behavior.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Механика платформы -->
+    <section id="how" class="py-32 px-8 md:px-24 bg-white">
+        <div class="max-w-4xl mx-auto text-center mb-24 reveal">
+            <h2 class="text-4xl md:text-6xl font-extrabold mb-6 text-[#58355e]">
+                <span data-lang="ru">Как это <span class="text-[#845e8c]">работает</span>?</span>
+                <span data-lang="en">How it <span class="text-[#845e8c]">works</span>?</span>
+            </h2>
+            <div class="w-24 h-1 bg-[#d9f99d] mx-auto mt-8"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Шаг 1 -->
+            <div class="group reveal">
+                <div class="flex items-center gap-6 mb-6">
+                    <span class="text-7xl font-black text-[#C7B1CB]/30 group-hover:text-[#845e8c] transition-colors">01</span>
+                    <h4 class="text-2xl font-bold text-[#58355e]"><span data-lang="ru">Участие в акциях</span><span data-lang="en">Joining Events</span></h4>
+                </div>
+                <div class="p-8 bg-[#f9f4f9] rounded-[40px] border border-transparent group-hover:border-[#C7B1CB] transition-all">
+                    <p class="text-gray-500 leading-relaxed"><span data-lang="ru">Вы находите ближайшие субботники, пункты приема вторсырья или эко-фестивали на нашей интерактивной карте.</span><span data-lang="en">Find nearby clean-ups, recycling points, or eco-festivals on our interactive map.</span></p>
+                </div>
+            </div>
+            <!-- Шаг 2 -->
+            <div class="group reveal" style="transition-delay: 0.1s;">
+                <div class="flex items-center gap-6 mb-6">
+                    <span class="text-7xl font-black text-[#C7B1CB]/30 group-hover:text-[#845e8c] transition-colors">02</span>
+                    <h4 class="text-2xl font-bold text-[#58355e]"><span data-lang="ru">Подтверждение</span><span data-lang="en">Verification</span></h4>
+                </div>
+                <div class="p-8 bg-[#f9f4f9] rounded-[40px] border border-transparent group-hover:border-[#C7B1CB] transition-all">
+                    <p class="text-gray-500 leading-relaxed"><span data-lang="ru">Через QR-коды на местах или фото-подтверждение вы фиксируете свой вклад в систему. Всё прозрачно и честно.</span><span data-lang="en">Fix your contribution via on-site QR codes or photo verification. Transparent and honest.</span></p>
+                </div>
+            </div>
+            <!-- Шаг 3 -->
+            <div class="group reveal" style="transition-delay: 0.2s;">
+                <div class="flex items-center gap-6 mb-6">
+                    <span class="text-7xl font-black text-[#C7B1CB]/30 group-hover:text-[#845e8c] transition-colors">03</span>
+                    <h4 class="text-2xl font-bold text-[#58355e]"><span data-lang="ru">Рост Капитала</span><span data-lang="en">Capital Growth</span></h4>
+                </div>
+                <div class="p-8 bg-[#f9f4f9] rounded-[40px] border border-transparent group-hover:border-[#C7B1CB] transition-all">
+                    <p class="text-gray-500 leading-relaxed"><span data-lang="ru">За каждое действие вы получаете баллы EcoScore и Эко-коины. Ваш уровень растет, открывая доступ к привилегиям.</span><span data-lang="en">Get EcoScore points and Eco-Coins for every action. Level up to unlock exclusive privileges.</span></p>
+                </div>
+            </div>
+            <!-- Шаг 4 -->
+            <div class="group reveal" style="transition-delay: 0.3s;">
+                <div class="flex items-center gap-6 mb-6">
+                    <span class="text-7xl font-black text-[#C7B1CB]/30 group-hover:text-[#845e8c] transition-colors">04</span>
+                    <h4 class="text-2xl font-bold text-[#58355e]"><span data-lang="ru">Реальные Выгоды</span><span data-lang="en">Real Benefits</span></h4>
+                </div>
+                <div class="p-8 bg-[#f9f4f9] rounded-[40px] border border-transparent group-hover:border-[#C7B1CB] transition-all">
+                    <p class="text-gray-500 leading-relaxed"><span data-lang="ru">Обменивайте Эко-коины на скидки от брендов, билеты на мероприятия или мерч проекта. Добро становится выгодным.</span><span data-lang="en">Exchange Eco-Coins for brand discounts, event tickets, or project merch. Doing good is rewarding.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Рейтинг (Wrapped) -->
+    <section id="wrapped" class="py-32 px-8 md:px-24">
+        <div class="text-center mb-20 reveal">
+            <h2 class="text-5xl md:text-8xl font-black mb-6 uppercase tracking-tighter text-[#58355e] opacity-10">City Wrapped</h2>
+            <h3 class="text-3xl md:text-5xl font-bold -mt-16 text-[#58355e]">
+                <span data-lang="ru">Эко-рейтинг городов</span><span data-lang="en">City Eco-Rating</span>
+            </h3>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="space-y-8 reveal">
+                <!-- Алматы -->
+                <div class="glass-card p-10 bg-white group hover:bg-[#58355e] hover:text-white transition-all duration-500">
+                    <div class="flex justify-between items-end mb-6">
+                        <div>
+                            <p class="text-xs font-bold text-gray-400 group-hover:text-[#C7B1CB] uppercase tracking-widest mb-1">Leaderboards</p>
+                            <h4 class="text-2xl font-bold">Almaty</h4>
+                        </div>
+                        <span class="text-4xl font-black text-[#d9f99d]">#1</span>
+                    </div>
+                    <div class="w-full bg-[#f9f4f9]/30 h-3 rounded-full mb-2">
+                        <div class="bg-[#d9f99d] h-full w-[82%]"></div>
+                    </div>
+                    <p class="text-right text-[10px] font-bold text-[#845e8c] group-hover:text-[#C7B1CB]">82% ACTIVITY RATE</p>
+                </div>
+                <!-- Астана -->
+                <div class="glass-card p-10 bg-white group hover:bg-[#58355e] hover:text-white transition-all duration-500">
+                    <div class="flex justify-between items-end mb-6">
+                        <div>
+                            <h4 class="text-2xl font-bold">Astana</h4>
+                        </div>
+                        <span class="text-4xl font-black text-[#C7B1CB]">#2</span>
+                    </div>
+                    <div class="w-full bg-[#f9f4f9]/30 h-3 rounded-full mb-2">
+                        <div class="bg-[#845e8c] h-full w-[76%]"></div>
+                    </div>
+                    <p class="text-right text-[10px] font-bold text-[#845e8c] group-hover:text-[#C7B1CB]">76% ACTIVITY RATE</p>
+                </div>
+            </div>
+            <div class="reveal" style="transition-delay: 0.2s;">
+                <p class="text-3xl font-light text-[#58355e] leading-relaxed italic border-l-4 border-[#d9f99d] pl-10">
+                    <span data-lang="ru">«Мы не просто считаем мешки с мусором. Мы замеряем эко-пульс каждого города Казахстана»</span>
+                    <span data-lang="en">"We don't just count trash bags. We measure the eco-pulse of every city in Kazakhstan"</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacts" class="bg-white py-24 px-8 md:px-24 border-t border-[#C7B1CB]/20">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16">
+            <!-- Brand -->
+            <div class="reveal">
+                <h2 class="text-4xl font-extrabold mb-4 text-[#58355e]">EcoScore</h2>
+                <p class="text-gray-400 text-sm font-medium leading-relaxed max-w-xs">
+                    <span data-lang="ru">Создаем культуру осознанного потребления и социального вклада в будущее Казахстана</span>
+                    <span data-lang="en">Creating a culture of conscious consumption and social contribution to the future of Kazakhstan</span>
+                </p>
+            </div>
+            
+            <!-- Contact Details -->
+            <div class="reveal" style="transition-delay: 0.1s;">
+                <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 mb-8"><span data-lang="ru">Свяжитесь с нами</span><span data-lang="en">Get in Touch</span></p>
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-[#f9f4f9] flex items-center justify-center text-lg">📷</div>
+                        <div>
+                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Instagram</p>
+                            <a href="https://instagram.com/ecoscore.kz" class="text-[#58355e] font-bold hover:text-[#845e8c] transition-colors">ecoscore.kz</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-[#f9f4f9] flex items-center justify-center text-lg">✉️</div>
+                        <div>
+                            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Email</p>
+                            <a href="mailto:ecoscore.kz@gmail.com" class="text-[#58355e] font-bold hover:text-[#845e8c] transition-colors">ecoscore.kz@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location & Copyright -->
+            <div class="flex flex-col md:items-end reveal" style="transition-delay: 0.2s;">
+                <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 mb-8"><span data-lang="ru">Локация</span><span data-lang="en">Location</span></p>
+                <div class="text-right mb-12">
+                    <p class="text-[#58355e] font-bold">Almaty, Kazakhstan</p>
+                </div>
+                <p class="text-[9px] text-gray-300 font-bold uppercase tracking-widest">© 2025 EcoScore Team. Build for a better world.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleLang() {
+            const body = document.body;
+            body.classList.toggle('lang-ru');
+            body.classList.toggle('lang-en');
+        }
+
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
